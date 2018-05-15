@@ -12,5 +12,9 @@ package io.github.guilhermedelemos.atividade07;
 public class App {
     public static void main(String args[]) {
         System.out.println("Atividade 7");
+        sonarCloud();
+    }
+    public static void sonarCloud() {
+        System.out.println("Sonar Cloud configurado");
     }
 }

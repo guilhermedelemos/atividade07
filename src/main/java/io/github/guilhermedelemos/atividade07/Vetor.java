@@ -31,5 +31,22 @@ public class Vetor {
         }
         return resultado / v.length;
     }
+    
+    public Extremos getExtremos(double[] v) {
+        Extremos e = new Extremos();
+        e.setMenor(v[0]);
+        e.setMaior(v[0]);
+        for(int i=0;i<v.length;i++) {
+            if(v[i] < e.getMenor()) {
+                e.setMenor(v[i]);
+                e.setIndiceMenor(i);
+            }
+            if(v[i] > e.getMaior()) {
+                e.setMaior(v[i]);
+                e.setIndiceMaior(i);
+            }
+        }
+        return e;
+    }
 
 }

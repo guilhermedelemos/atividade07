@@ -48,5 +48,27 @@ public class Vetor {
         }
         return e;
     }
+    
+    public int getQtdeValoresAcimaMedia(double[] v) {
+        double media = media(v);
+        int contador = 0;
+        for(int i=0;i<v.length;i++) {
+            if(v[i] > media) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+    
+    public int getQtdeValoresAbaixoMedia(double[] v) {
+        double media = media(v);
+        int contador = 0;
+        for(int i=0;i<v.length;i++) {
+            if(v[i] < media) {
+                contador++;
+            }
+        }
+        return contador;
+    }
 
 }

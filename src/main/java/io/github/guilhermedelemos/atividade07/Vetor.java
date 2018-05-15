@@ -70,5 +70,18 @@ public class Vetor {
         }
         return contador;
     }
+    
+    public double variancia(double[] v) {
+        double media = media(v);
+        double soma = 0;
+        for(int i=0;i<v.length;i++) {
+            soma += Math.pow(v[i] - media, 2);
+        }
+        return soma / v.length;
+    }
+    
+    public double desvioPadrao(double[] v) {
+        return Math.sqrt(variancia(v));
+    }
 
 }

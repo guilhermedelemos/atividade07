@@ -14,26 +14,33 @@ import static org.mockito.Mockito.*;
  * @author guilherme
  */
 public class VetorTest {
-    
+
     public VetorTest() {
     }
 
     @Test(expected = Exception.class)
-    public void validarVetorNuloTest() throws Exception{
+    public void validarVetorNuloTest() throws Exception {
         double[] entrada = null;
         ValidarVetor vv = new ValidarVetor();
         vv.validar(entrada);
     }
-    
+
     @Test
-    public void validarVetorVazioTest() throws Exception{
+    public void validarVetorVazioTest() throws Exception {
         double[] entrada = {};
         ValidarVetor vv = new ValidarVetor();
         try {
-        vv.validar(entrada);
-        } catch(Exception e) {
+            vv.validar(entrada);
+        } catch (Exception e) {
             assertEquals("Vetor com zero elementos", e.getMessage());
         }
     }
-    
+
+    @Test
+    public void medianaTest() {
+        double[] entrada = {5.8, 4.6, 9.2};
+        Vetor v = new Vetor();
+        assertEquals(5.8, v.mediana(entrada), 0.1);
+    }
+
 }

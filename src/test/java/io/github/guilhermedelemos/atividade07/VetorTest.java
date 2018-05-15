@@ -38,9 +38,13 @@ public class VetorTest {
 
     @Test
     public void medianaTest() {
-        double[] entrada = {5.8, 4.6, 9.2};
         Vetor v = new Vetor();
-        assertEquals(5.8, v.mediana(entrada), 0.1);
+
+        double[] entradaImpar = {5.8, 4.6, 9.2};
+        assertEquals(5.8, v.mediana(entradaImpar), 0.1);
+
+        double[] entradaPar = {5.8, 4.6, 9.2, 1.1};
+        assertEquals(5.2, v.mediana(entradaPar), 0.1);
     }
 
 }

@@ -19,10 +19,21 @@ public class VetorTest {
     }
 
     @Test(expected = Exception.class)
-    public void validarVetorTest() throws Exception{
+    public void validarVetorNuloTest() throws Exception{
         double[] entrada = null;
         ValidarVetor vv = new ValidarVetor();
         vv.validar(entrada);
+    }
+    
+    @Test
+    public void validarVetorVazioTest() throws Exception{
+        double[] entrada = {};
+        ValidarVetor vv = new ValidarVetor();
+        try {
+        vv.validar(entrada);
+        } catch(Exception e) {
+            assertEquals("Vetor com zero elementos", e.getMessage());
+        }
     }
     
 }

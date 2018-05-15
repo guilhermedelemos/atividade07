@@ -84,5 +84,17 @@ public class VetorTest {
         int qtde = v.getQtdeValoresAbaixoMedia(vetorGrande);
         assertEquals(4, qtde);
     }
+    
+    @Test
+    public void varianciaTest() {
+        double variancia = v.variancia(vetorImpar);
+        assertEquals(3.7955, variancia, 0.1);
+    }
+    
+    @Test
+    public void desvioPadraoTest() {
+        double desvioPadrao = v.desvioPadrao(vetorImpar);
+        assertEquals(1.9448, desvioPadrao, 0.1);
+    }
 
 }

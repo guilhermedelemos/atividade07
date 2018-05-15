@@ -34,7 +34,7 @@ public class VetorTest {
         vetorPar = par;
         double[] impar = {5.8, 4.6, 9.2};
         vetorImpar = impar;
-        double[] grande = {5.8, 4.6, 9.2, 1.1, 4.0, 1.6, 3.0};
+        double[] grande = {5.8, 4.6, 9.2, 1.1, 4.0, 1.6, 3.0}; // média=4,1857
         vetorGrande = grande;
 
     }
@@ -71,6 +71,18 @@ public class VetorTest {
         assertEquals(3, e.getIndiceMenor());
         assertEquals(9.2, e.getMaior(), 0.1);
         assertEquals(2, e.getIndiceMaior());
+    }
+    
+    @Test
+    public void acimaMediaTest() {
+        int qtde = v.getQtdeValoresAcimaMedia(vetorGrande);
+        assertEquals(3, qtde);
+    }
+    
+    @Test
+    public void abaixoMediaTest() {
+        int qtde = v.getQtdeValoresAbaixoMedia(vetorGrande);
+        assertEquals(4, qtde);
     }
 
 }

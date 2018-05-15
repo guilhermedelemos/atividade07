@@ -16,10 +16,20 @@ public class Vetor {
     public double mediana(double[] v) {
         Arrays.sort(v);
         int meio = v.length / 2;
-        if (v.length % 2 == 0) //módulo (resto da divisão)
-            return (v[meio-1] + v[meio]) / 2.0;
-        else
+        if (v.length % 2 == 0) {
+            //módulo (resto da divisão)
+            return (v[meio - 1] + v[meio]) / 2.0;
+        } else {
             return v[meio];
+        }
+    }
+
+    public double media(double[] v) {
+        double resultado = 0.0;
+        for (int i = 0; i < v.length; i++) {
+            resultado += v[i];
+        }
+        return resultado / v.length;
     }
 
 }

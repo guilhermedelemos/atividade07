@@ -96,5 +96,22 @@ public class VetorTest {
         double desvioPadrao = v.desvioPadrao(vetorImpar);
         assertEquals(1.9448, desvioPadrao, 0.1);
     }
+    
+    @Test
+    public void encontrarMaioresTest() {
+        double[] maiores = v.encontrarMaiores(vetorGrande, 2);
+        assertEquals(2, maiores.length);
+        assertEquals(9.2, maiores[0], 0.1);
+        assertEquals(5.8, maiores[1], 0.1);
+    }
+    
+    @Test
+    public void encontrarMenoresTest() {
+        double[] menores = v.encontrarMenores(vetorGrande, 3);
+        assertEquals(3, menores.length);
+        assertEquals(1.1, menores[0], 0.1);
+        assertEquals(1.6, menores[1], 0.1);
+        assertEquals(3.0, menores[2], 0.1);
+    }
 
 }

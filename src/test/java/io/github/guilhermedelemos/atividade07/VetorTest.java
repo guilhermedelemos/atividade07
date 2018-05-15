@@ -47,4 +47,11 @@ public class VetorTest {
         assertEquals(5.2, v.mediana(entradaPar), 0.1);
     }
 
+    @Test
+    public void mediaTest() {
+        Vetor v = new Vetor();
+        double[] entrada = {5.8, 4.6, 9.2};
+        assertEquals(6.53, v.media(entrada), 0.1);
+    }
+
 }

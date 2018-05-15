@@ -18,7 +18,7 @@ public class VetorTest {
 
     private static Vetor v;
     private static ValidarVetor vv;
-    private static double[] vetorNulo, vetorVazio, vetorPar, vetorImpar;
+    private static double[] vetorNulo, vetorVazio, vetorPar, vetorImpar, vetorGrande;
 
     public VetorTest() {
     }
@@ -34,6 +34,9 @@ public class VetorTest {
         vetorPar = par;
         double[] impar = {5.8, 4.6, 9.2};
         vetorImpar = impar;
+        double[] grande = {5.8, 4.6, 9.2, 1.1, 4.0, 1.6, 3.0};
+        vetorGrande = grande;
+        
     }
 
     @Test(expected = Exception.class)
@@ -58,8 +61,16 @@ public class VetorTest {
 
     @Test
     public void mediaTest() {
-        double[] entrada = {5.8, 4.6, 9.2};
-        assertEquals(6.53, v.media(entrada), 0.1);
+        assertEquals(6.53, v.media(vetorImpar), 0.1);
+    }
+    
+    @Test
+    public void extremosTest() {
+        Extremos e = v.extremos(vetorImpar);
+        assertEquals(1.1, e.getMenor(), 0.1);
+        assertEquals(3, e.getIndiceMenor());
+        assertEquals(9.2, e.getMaior(), 0.1);
+        assertEquals(2, e.getIndiceMaior());
     }
 
 }
